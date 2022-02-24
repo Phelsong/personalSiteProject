@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+/* Header content*/
+
+header {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    width: 100vw;
+    position: sticky;
+    top: 0%;
+    min-height: 4vh;
+    margin:0;
+    background-color: hsl(48, 20%, 90%)
+}
+
+nav {
+    display: flex;
+}
+
+.logoBlock {
+
+    display: flex;
+    position: static;
+    color: black;
+    margin-right: 3vw;
+}
+
+.logo {
+    display: flexbox;
+    position: relative;
+}
+
+.logo h3 {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    margin: 2vh 0 1vh 0;
+    font-size: clamp(1rem, 0.6rem + .8vw, 4rem);
+}
+
+.logoDesc {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    font-size: smaller;
+}
+
+.navBar {
+    display: flex;
+    width: 50vw;
+    height: 2vh;
+    margin: 3vh 1vw 0 3vw;
+}
+
+.navBar a {
+    display: flex;
+    color: black;
+    margin: 0 1vw 0 1vw;
+    padding: 0 0 3vh 0;
+    text-decoration: none;
+    font-size: clamp(1rem, 0.2rem + 1vw, 4rem);
+    font-weight: 500;
+    border-bottom: 2px solid aquamarine;
+}
+
+.navBar a:hover {
+    color: rgb(108, 218, 199);
+    transition: .15s ease-in-out;
+}
+
+/* mobile Nav Bar*/
+.mobileNavBar {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100vw;
+    min-height: 1vh;
+}
+
+.hamburger {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    min-height: 3vh;
+    cursor: pointer;
+    transition: 0.35s ease-out;
+}
+
+/* mobile nav content*/
+.mobileNavBarDrop {
+    visibility: hidden;
+    height: 3vh;
+    min-width: 95%;
+    height: auto;
+    justify-content: center;
+}
+
+.mobileNavBarDropdownContent {
+    display: flex;
+    height: 3vh;
+    width: 100%;
+    flex-flow: column nowrap;
+    visibility: hidden;
+    transition: 0.3s ease;
+    align-items: center;
+}
+
+.mobileNavBarDropdownContent a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(48, 20%, 90%);
+    color: black;
+    padding: 1%;
+    text-decoration: none;
+    justify-content: center;
+    text-shadow: .1px .1px .1px black;
+    border-bottom: 1px solid aqua;
+
+}
+.mobileNavBarDropdownContent a:first-child{
+    margin-top: 1%;
+    padding-top: 1%;
+}
+
+/* shows dropdown content */
+.mobileNavBar:focus .mobileNavBarDropdownContent {
+    transform: translateY(2vh);
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+
+}
+
+/* mask to close menu by clicking on the button */
+.mobileNavBar .mobileNavBarDrop {
+    display: flex;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
+}
+
+.mobileNavBar .mobileNavBarDrop:focus .mobileNavBarDropdownContent {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Media Queries */
+@media screen and (min-width: 7in) {
+    .hamburger {
+        display: none;
+    }
+
+    .mobileNavBar {
+        display: none;
+
+    }
+}
+
+@media screen and (max-width: 7in) {
+
+    .navBar {
+        display: none;
+    }
+
+    header {
+        justify-content: center;
+        transition: 0.5s ease-in;
+    }
+
+    .logoBlock {
+        margin-top: 2%;
+    }
+
+    .logoDesc {
+        justify-content: center;
+
+    }
+}
